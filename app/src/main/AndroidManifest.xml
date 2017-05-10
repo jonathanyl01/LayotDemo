@@ -28,8 +28,9 @@
         </activity>
         <activity android:name=".mine.MyHousingActivity" />
         <activity android:name=".mine.MycollectActivity" />
-        <activity android:name=".mine.MyOrderActivity"></activity>
-        <activity android:name=".mine.MyFamilyActivity"></activity>
+        <activity android:name=".mine.MyOrderActivity" />
+        <activity android:name=".mine.MyFamilyActivity" />
+        <activity android:name=".mine.MySettingActivity"></activity>
     </application>
 
 </manifest>

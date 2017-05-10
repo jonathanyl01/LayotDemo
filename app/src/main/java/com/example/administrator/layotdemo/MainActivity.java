@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class MainActivity extends AppCompatActivity implements  ViewPager.OnPageChangeListener, OnTabSelectListener {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, OnTabSelectListener {
 
 
     @BindView(R.id.main_bottombar)
@@ -28,18 +28,14 @@ public class MainActivity extends AppCompatActivity implements  ViewPager.OnPage
     ViewPager mainViewpager;
     private Unbinder unbinder;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
         unbinder = ButterKnife.bind(this);
-
         mainViewpager.setAdapter(adapter);
         mainViewpager.addOnPageChangeListener(this);
-
         mBottombar.setOnTabSelectListener(this);
 
     }
@@ -80,8 +76,6 @@ public class MainActivity extends AppCompatActivity implements  ViewPager.OnPage
     }
 
 
-
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -90,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements  ViewPager.OnPage
     @Override
     public void onPageSelected(int position) {
 
-        mBottombar.selectTabAtPosition(position,true);
+        mBottombar.selectTabAtPosition(position, true);
 
     }
 
@@ -101,41 +95,27 @@ public class MainActivity extends AppCompatActivity implements  ViewPager.OnPage
 
     @Override
     public void onTabSelected(@IdRes int tabId) {
-
         switch (tabId) {
-
             case R.id.tab_home:
-
                 mainViewpager.setCurrentItem(0, false);
-
                 break;
             case R.id.tab_serve:
                 mainViewpager.setCurrentItem(1, false);
-
-
                 break;
-
             case R.id.tab_neighbor:
                 mainViewpager.setCurrentItem(2, false);
-
                 break;
-
             case R.id.tab_shopping:
                 mainViewpager.setCurrentItem(3, false);
-
-
                 break;
-
             case R.id.tab_mine:
                 mainViewpager.setCurrentItem(4, false);
-
                 break;
 
 
         }
 
     }
-
 
 
 }
