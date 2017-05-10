@@ -27,7 +27,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".mine.MyHousingActivity" />
-        <activity android:name=".mine.MycollectActivity"></activity>
+        <activity android:name=".mine.MycollectActivity" />
+        <activity android:name=".mine.MyOrderActivity"></activity>
+        <activity android:name=".mine.MyFamilyActivity"></activity>
     </application>
 
 </manifest>

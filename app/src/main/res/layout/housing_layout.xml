@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <com.malinskiy.superrecyclerview.SuperRecyclerView
+    <!--<com.malinskiy.superrecyclerview.SuperRecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,5 +30,5 @@
         app:cpb_background_progressbar_width="3dp"
         app:cpb_progressbar_color="@color/colorAccent"
         app:cpb_progressbar_width="3dp"/>
-
+-->
 </RelativeLayout>

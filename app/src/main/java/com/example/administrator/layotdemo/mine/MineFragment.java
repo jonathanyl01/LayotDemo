@@ -42,7 +42,6 @@ public class MineFragment extends BaseFragment {
     protected void initView() {
 
 
-
     }
 
     @Override
@@ -63,16 +62,21 @@ public class MineFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.myhousing:
-                intent = new Intent(getContext(),MyHousingActivity.class);
+                intent = new Intent(getContext(), MyHousingActivity.class);
                 startActivity(intent);
                 break;
             case R.id.re_collect:
-                intent = new Intent(getContext(),MycollectActivity.class);
+                intent = new Intent(getContext(), MycollectActivity.class);
                 startActivity(intent);
                 break;
             case R.id.re_shop:
+                //new MyOrderActivity().openActivity(getContext());
+                intent = new Intent(getContext(), MyOrderActivity.class);
+                startActivity(intent);
                 break;
             case R.id.re_family:
+                intent = new Intent(getContext(), MyFamilyActivity.class);
+                startActivity(intent);
                 break;
             case R.id.re_setting:
                 break;

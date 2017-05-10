@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.administrator.layotdemo.mine.MycollectActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/order_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary">
@@ -21,26 +21,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我的收藏"
-                android:layout_gravity = "center"
-                android:textSize="20sp"/>
+                android:layout_gravity="center"
+                android:text="我的订单"
+                android:textSize="20sp" />
 
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/tab"
+            android:id="@+id/order_tab"
+            app:tabIndicatorColor="@color/black"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/brown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:tabIndicatorColor="@color/black"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/brown"></android.support.design.widget.TabLayout>
+            android:background="@color/white"></android.support.design.widget.TabLayout>
 
     </android.support.design.widget.AppBarLayout>
 
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/collect_viewpager"
+        android:id="@+id/order_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

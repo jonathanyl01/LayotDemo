@@ -7,10 +7,10 @@ import com.example.administrator.layotdemo.R;
  * Created by Administrator on 2017/5/10.
  */
 
-public class FleaMarketFragment extends BaseFragment {
+public class FinishFragment extends BaseFragment {
     @Override
     protected int getContentViewLayout() {
-        return R.layout.layout_fleamarket;
+        return R.layout.layout_finish;
     }
 
     @Override

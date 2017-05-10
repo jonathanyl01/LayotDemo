@@ -4,6 +4,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/housing_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的小区"
+            android:layout_gravity = "center"
+            android:textSize="20sp"/>
+
+    </android.support.v7.widget.Toolbar>
+
     <RelativeLayout
         android:id="@+id/re_housing"
         android:layout_width="match_parent"
