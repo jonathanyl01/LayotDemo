@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        icon = "@drawable/ic_tab_home"
+        id="@+id/tab_home"
+        title="@string/main_home" />
+    <tab
+        icon="@drawable/ic_tab_category"
+        id="@+id/tab_serve"
+        title="@string/main_serve" />
+    <tab
+        icon="@drawable/ic_tab_home"
+        id="@+id/tab_neighbor"
+        title="@string/main_neighbor_circle" />
+    <tab
+        icon="@drawable/ic_tab_cart"
+        id="@+id/tab_shopping"
+        title="@string/main_market" />
+    <tab
+        icon="@drawable/ic_tab_mine"
+        id="@+id/tab_mine"
+        title="@string/main_mine" />
+</tabs>
