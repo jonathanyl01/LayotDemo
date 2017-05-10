@@ -1,6 +1,6 @@
 package com.example.administrator.layotdemo.mine.fragment;
 
-import com.example.administrator.layotdemo.BaseFragment;
+import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.R;
 
 /**

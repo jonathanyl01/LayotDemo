@@ -1,6 +1,6 @@
 package com.example.administrator.layotdemo.neighbor;
 
-import com.example.administrator.layotdemo.BaseFragment;
+import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.R;
 
 /**

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.administrator.layotdemo.BaseFragment;
+import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.banner.BannerAdapter;
 import com.example.administrator.layotdemo.base.banner.BannerLayout;

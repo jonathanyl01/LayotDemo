@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-import com.example.administrator.layotdemo.BaseFragment;
+import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.R;
+import com.example.administrator.layotdemo.utils.ActivityUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +33,7 @@ public class MineFragment extends BaseFragment {
     SwipeRefreshLayout mineRefresh;
     Unbinder unbinder;
     private Intent intent;
+    private ActivityUtils activityUtils;
 
     @Override
     protected int getContentViewLayout() {
@@ -41,6 +43,7 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void initView() {
 
+        activityUtils = new ActivityUtils();
 
     }
 
@@ -62,21 +65,16 @@ public class MineFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.myhousing:
-                intent = new Intent(getContext(), MyHousingActivity.class);
-                startActivity(intent);
+                activityUtils.openActivity(getContext(),MyHousingActivity.class);
                 break;
             case R.id.re_collect:
-                intent = new Intent(getContext(), MycollectActivity.class);
-                startActivity(intent);
+                activityUtils.openActivity(getContext(),MycollectActivity.class);
                 break;
             case R.id.re_shop:
-                //new MyOrderActivity().openActivity(getContext());
-                intent = new Intent(getContext(), MyOrderActivity.class);
-                startActivity(intent);
+                activityUtils.openActivity(getContext(),MyOrderActivity.class);
                 break;
             case R.id.re_family:
-                intent = new Intent(getContext(), MyFamilyActivity.class);
-                startActivity(intent);
+                activityUtils.openActivity(getContext(),MyFamilyActivity.class);
                 break;
             case R.id.re_setting:
                 break;
