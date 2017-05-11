@@ -6,10 +6,11 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.R;
+import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.utils.ActivityUtils;
 
 import butterknife.BindView;
@@ -32,6 +33,12 @@ public class MineFragment extends BaseFragment {
     @BindView(R.id.mine_refresh)
     SwipeRefreshLayout mineRefresh;
     Unbinder unbinder;
+    @BindView(R.id.ll_balance)
+    LinearLayout llBalance;
+    @BindView(R.id.ll_integral)
+    LinearLayout llIntegral;
+    @BindView(R.id.ll_ticket)
+    LinearLayout llTicket;
     private Intent intent;
     private ActivityUtils activityUtils;
 
@@ -61,24 +68,33 @@ public class MineFragment extends BaseFragment {
         unbinder.unbind();
     }
 
-    @OnClick({R.id.myhousing, R.id.re_collect, R.id.re_shop, R.id.re_family, R.id.re_setting})
+    @OnClick({R.id.myhousing, R.id.re_collect, R.id.re_shop, R.id.re_family, R.id.re_setting, R.id.ll_balance, R.id.ll_integral, R.id.ll_ticket})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.myhousing:
-                activityUtils.openActivity(getContext(),MyHousingActivity.class);
+                activityUtils.openActivity(getContext(), MyHousingActivity.class);
                 break;
             case R.id.re_collect:
-                activityUtils.openActivity(getContext(),MycollectActivity.class);
+                activityUtils.openActivity(getContext(), MycollectActivity.class);
                 break;
             case R.id.re_shop:
-                activityUtils.openActivity(getContext(),MyOrderActivity.class);
+                activityUtils.openActivity(getContext(), MyOrderActivity.class);
                 break;
             case R.id.re_family:
-                activityUtils.openActivity(getContext(),MyFamilyActivity.class);
+                activityUtils.openActivity(getContext(), MyFamilyActivity.class);
                 break;
             case R.id.re_setting:
-                activityUtils.openActivity(getContext(),MySettingActivity.class);
+                activityUtils.openActivity(getContext(), MySettingActivity.class);
+                break;
+            case R.id.ll_balance:
+                activityUtils.openActivity(getContext(),PayActivity.class);
+                break;
+            case R.id.ll_integral:
+                break;
+            case R.id.ll_ticket:
                 break;
         }
     }
+
+
 }

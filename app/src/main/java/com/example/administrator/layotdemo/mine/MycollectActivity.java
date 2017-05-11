@@ -8,11 +8,11 @@ import android.support.v7.widget.Toolbar;
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseActivity;
 import com.example.administrator.layotdemo.mine.adapter.CollectViewPagerAdapter;
-import com.example.administrator.layotdemo.mine.fragment.CommunityActivityFragment;
-import com.example.administrator.layotdemo.mine.fragment.FleaMarketFragment;
-import com.example.administrator.layotdemo.mine.fragment.HouseInfoFragment;
-import com.example.administrator.layotdemo.mine.fragment.MerchantInfoFragment;
-import com.example.administrator.layotdemo.mine.fragment.ProductFragment;
+import com.example.administrator.layotdemo.mine.fragment.collect.CommunityActivityFragment;
+import com.example.administrator.layotdemo.mine.fragment.collect.FleaMarketFragment;
+import com.example.administrator.layotdemo.mine.fragment.collect.HouseInfoFragment;
+import com.example.administrator.layotdemo.mine.fragment.collect.MerchantInfoFragment;
+import com.example.administrator.layotdemo.mine.fragment.collect.ProductFragment;
 
 import java.util.ArrayList;
 import java.util.List;

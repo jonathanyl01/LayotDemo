@@ -12,6 +12,10 @@
     <dimen name="spacing_small">10dp</dimen>
     <dimen name="spacing_tiny">4dp</dimen>
 
+
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+
     <!-- 视图尺寸 -->
     <dimen name="size_400">400dp</dimen>
     <dimen name="size_260">260dp</dimen>

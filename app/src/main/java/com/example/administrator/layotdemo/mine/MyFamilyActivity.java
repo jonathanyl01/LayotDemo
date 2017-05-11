@@ -8,8 +8,8 @@ import android.support.v7.widget.Toolbar;
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseActivity;
 import com.example.administrator.layotdemo.mine.adapter.MyFamilyViewPagerAdapter;
-import com.example.administrator.layotdemo.mine.fragment.FamilyFragment;
-import com.example.administrator.layotdemo.mine.fragment.QRcodeFragment;
+import com.example.administrator.layotdemo.mine.fragment.family.FamilyFragment;
+import com.example.administrator.layotdemo.mine.fragment.family.QRcodeFragment;
 
 import java.util.ArrayList;
 import java.util.List;

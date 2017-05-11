@@ -1,4 +1,4 @@
-package com.example.administrator.layotdemo.mine.fragment;
+package com.example.administrator.layotdemo.mine.fragment.collect;
 
 import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.R;
@@ -7,10 +7,10 @@ import com.example.administrator.layotdemo.R;
  * Created by Administrator on 2017/5/10.
  */
 
-public class CommunityActivityFragment extends BaseFragment {
+public class HouseInfoFragment extends BaseFragment {
     @Override
     protected int getContentViewLayout() {
-        return R.layout.layout_communityactivity;
+        return R.layout.layout_house;
     }
 
     @Override

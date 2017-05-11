@@ -17,5 +17,7 @@
     <color name="brown">#847534</color>
     <color name="im_font_color_text_hint">#abb1b6</color>
     <color name="transparent">#00000000</color>
+    <color name="colorTextHint">#bb9a82</color>
+    <color name="color_green">#66CD00</color>
 
 </resources>

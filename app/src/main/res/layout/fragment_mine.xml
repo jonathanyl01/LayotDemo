@@ -28,7 +28,7 @@
                 layout="@layout/layout_accout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.8" />
+                android:layout_weight="0.7" />
 
             <View
                 android:layout_width="match_parent"

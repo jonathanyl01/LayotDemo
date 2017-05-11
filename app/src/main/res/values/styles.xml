@@ -105,6 +105,16 @@
         <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
     </style>
 
+    <style name="AppTheme.EditText.Big" parent="Widget.AppCompat.EditText">
+        <item name="android:drawablePadding">@dimen/dp_6</item>
+        <item name="android:paddingLeft">@dimen/dp_6</item>
+        <item name="android:paddingRight">@dimen/dp_6</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@mipmap/edit_bg_long</item>
+    </style>
+
 
 
 

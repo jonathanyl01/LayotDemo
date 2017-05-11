@@ -31,6 +31,7 @@
         <activity android:name=".mine.MyOrderActivity" />
         <activity android:name=".mine.MyFamilyActivity" />
         <activity android:name=".mine.MySettingActivity"></activity>
+        <activity android:name=".mine.PayActivity"/>
     </application>
 
 </manifest>

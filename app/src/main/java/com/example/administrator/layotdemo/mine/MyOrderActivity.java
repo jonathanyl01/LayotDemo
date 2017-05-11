@@ -8,10 +8,10 @@ import android.support.v7.widget.Toolbar;
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseActivity;
 import com.example.administrator.layotdemo.mine.adapter.MyOrderViewPagerAdapter;
-import com.example.administrator.layotdemo.mine.fragment.FinishFragment;
-import com.example.administrator.layotdemo.mine.fragment.WaitEvaluateFragment;
-import com.example.administrator.layotdemo.mine.fragment.WaitPayFragment;
-import com.example.administrator.layotdemo.mine.fragment.WaitRecieveFragment;
+import com.example.administrator.layotdemo.mine.fragment.order.FinishFragment;
+import com.example.administrator.layotdemo.mine.fragment.order.WaitEvaluateFragment;
+import com.example.administrator.layotdemo.mine.fragment.order.WaitPayFragment;
+import com.example.administrator.layotdemo.mine.fragment.order.WaitRecieveFragment;
 
 import java.util.ArrayList;
 import java.util.List;
