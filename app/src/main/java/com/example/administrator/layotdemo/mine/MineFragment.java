@@ -39,6 +39,8 @@ public class MineFragment extends BaseFragment {
     LinearLayout llIntegral;
     @BindView(R.id.ll_ticket)
     LinearLayout llTicket;
+    @BindView(R.id.re_usermessage)
+    RelativeLayout reuserMessage;
     private Intent intent;
     private ActivityUtils activityUtils;
 
@@ -68,7 +70,7 @@ public class MineFragment extends BaseFragment {
         unbinder.unbind();
     }
 
-    @OnClick({R.id.myhousing, R.id.re_collect, R.id.re_shop, R.id.re_family, R.id.re_setting, R.id.ll_balance, R.id.ll_integral, R.id.ll_ticket})
+    @OnClick({R.id.myhousing, R.id.re_collect, R.id.re_shop, R.id.re_family, R.id.re_setting, R.id.ll_balance, R.id.ll_integral, R.id.ll_ticket,R.id.re_usermessage})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.myhousing:
@@ -90,8 +92,13 @@ public class MineFragment extends BaseFragment {
                 activityUtils.openActivity(getContext(),PayActivity.class);
                 break;
             case R.id.ll_integral:
+                activityUtils.openActivity(getContext(),IntegralActivity.class);
                 break;
             case R.id.ll_ticket:
+                activityUtils.openActivity(getContext(),TicketActivity.class);
+                break;
+            case R.id.re_usermessage:
+                activityUtils.openActivity(getContext(),UserInfoActivity.class);
                 break;
         }
     }

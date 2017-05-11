@@ -13,7 +13,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-           <include
+            <include
                 layout="@layout/layout_user"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -59,6 +59,13 @@
                     android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="我的小区" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
 
 
             </RelativeLayout>
@@ -92,6 +99,13 @@
                     android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="我的收藏" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
 
 
             </RelativeLayout>
@@ -124,6 +138,13 @@
                     android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="商品订单" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
 
 
             </RelativeLayout>
@@ -156,11 +177,16 @@
                     android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="邀请家人" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
 
 
             </RelativeLayout>
-
-
 
 
             <View
@@ -191,6 +217,13 @@
                     android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="设置" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
 
 
             </RelativeLayout>

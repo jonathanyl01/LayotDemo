@@ -30,8 +30,11 @@
         <activity android:name=".mine.MycollectActivity" />
         <activity android:name=".mine.MyOrderActivity" />
         <activity android:name=".mine.MyFamilyActivity" />
-        <activity android:name=".mine.MySettingActivity"></activity>
-        <activity android:name=".mine.PayActivity"/>
+        <activity android:name=".mine.MySettingActivity" />
+        <activity android:name=".mine.PayActivity" />
+        <activity android:name=".mine.IntegralActivity" />
+        <activity android:name=".mine.TicketActivity" />
+        <activity android:name=".mine.UserInfoActivity"></activity>
     </application>
 
 </manifest>
