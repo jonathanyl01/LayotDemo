@@ -1,16 +1,12 @@
 package com.example.administrator.layotdemo.mine;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.example.administrator.layotdemo.R;
+import com.example.administrator.layotdemo.base.BaseActivity;
 import com.example.administrator.layotdemo.mine.adapter.MyFamilyViewPagerAdapter;
 import com.example.administrator.layotdemo.mine.fragment.FamilyFragment;
 import com.example.administrator.layotdemo.mine.fragment.QRcodeFragment;
@@ -19,9 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class MyFamilyActivity extends AppCompatActivity {
+public class MyFamilyActivity extends BaseActivity {
 
     @BindView(R.id.family_toolbar)
     Toolbar familyToolbar;
@@ -34,24 +29,19 @@ public class MyFamilyActivity extends AppCompatActivity {
     private FamilyFragment familyFragment;
     private QRcodeFragment qRcodeFragment;
 
-
-    public void openActivity(Context context) {
-        Intent intent = new Intent(context, MyFamilyActivity.class);
-
-        startActivity(intent);
-    }
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_family);
-        ButterKnife.bind(this);
-
+    protected void initView() {
 
         initToolBar();
         initTab();
 
     }
+
+    @Override
+    protected int getContentViewLayout() {
+        return R.layout.activity_my_family;
+    }
+
 
     private void initTab() {
 
@@ -92,12 +82,8 @@ public class MyFamilyActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("");
         }
 
-        familyToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
     }
+
+
 }

@@ -1,47 +1,42 @@
 package com.example.administrator.layotdemo.mine;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.example.administrator.layotdemo.R;
+import com.example.administrator.layotdemo.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class MyHousingActivity extends AppCompatActivity {
+public class MyHousingActivity extends BaseActivity {
 
 
     @BindView(R.id.housing_toolbar)
     Toolbar housingToolbar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_housing);
-        ButterKnife.bind(this);
+    protected void initView() {
+
         initToolBar();
 
+    }
 
+    @Override
+    protected int getContentViewLayout() {
+        return R.layout.activity_my_housing;
     }
 
     private void initToolBar() {
 
         setSupportActionBar(housingToolbar);
 
-        if (getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("");
         }
 
-        housingToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
     }
+
+
 }

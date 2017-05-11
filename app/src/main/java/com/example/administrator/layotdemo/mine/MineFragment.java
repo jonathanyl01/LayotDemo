@@ -77,6 +77,7 @@ public class MineFragment extends BaseFragment {
                 activityUtils.openActivity(getContext(),MyFamilyActivity.class);
                 break;
             case R.id.re_setting:
+                activityUtils.openActivity(getContext(),MySettingActivity.class);
                 break;
         }
     }
