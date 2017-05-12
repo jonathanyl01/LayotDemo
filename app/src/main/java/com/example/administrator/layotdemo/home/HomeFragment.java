@@ -1,11 +1,9 @@
 package com.example.administrator.layotdemo.home;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -17,8 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 
 /**
@@ -35,7 +31,6 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
     TextView tvWeather;
     @BindView(R.id.home_scroll)
     MonitorScrollView homeScroll;
-    Unbinder unbinder1;
 
     private List list;
 
@@ -78,7 +73,7 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
 
     private void initToolBar() {
 
-        homeToolbar.getBackground().setAlpha(0);
+        homeToolbar.getBackground().setAlpha(110);
         homeToolbar.setTitle("");
         ((AppCompatActivity) getActivity()).setSupportActionBar(homeToolbar);
 
@@ -87,25 +82,11 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder1 = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder1.unbind();
-    }
-
-    @Override
     public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
         float height = bannerlayout.getHeight();  //获取图片的高度
         if (oldt < height) {
             int i = Float.valueOf(oldt / height * 255).intValue();    //i 有可能小于 0
-            homeToolbar.getBackground().setAlpha(Math.max(i, 0));   // 0~255 透明度
+            homeToolbar.getBackground().setAlpha(Math.max(i, 110));   // 0~255 透明度
         } else {
             homeToolbar.getBackground().setAlpha(255);
         }
