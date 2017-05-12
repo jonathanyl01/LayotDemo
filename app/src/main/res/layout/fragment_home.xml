@@ -30,6 +30,14 @@
                 layout="@layout/list_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/gray_light" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@color/white"></RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -50,14 +58,7 @@
                 layout="@layout/hot_shop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/gray_light" />
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@color/white"></RelativeLayout>
+
 
         </LinearLayout>
     </com.example.administrator.layotdemo.home.MonitorScrollView>
