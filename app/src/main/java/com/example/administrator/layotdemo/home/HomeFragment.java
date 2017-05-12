@@ -1,17 +1,16 @@
 package com.example.administrator.layotdemo.home;
 
-import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.ListView;
+import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseFragment;
-import com.example.administrator.layotdemo.base.banner.BannerAdapter;
 import com.example.administrator.layotdemo.base.banner.BannerLayout;
 
 import java.util.ArrayList;
@@ -21,28 +20,25 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-import static com.example.administrator.layotdemo.R.id.bannerlayout;
-import static com.example.administrator.layotdemo.R.id.tv_weather;
-
 
 /**
  * Created by Administrator on 2017/4/24 0024.
  */
 
-public class HomeFragment extends BaseFragment implements HomeListView.OnScrollChangedListener {
+public class HomeFragment extends BaseFragment implements MonitorScrollView.OnScrollChangedListener {
 
-    @BindView(R.id.list_home_goods)
-    HomeListView listHomeGoods;
     @BindView(R.id.home_toolbar)
     Toolbar homeToolbar;
-    private Unbinder unbinder;
+    @BindView(R.id.bannerlayout)
+    BannerLayout bannerlayout;
+    @BindView(R.id.tv_weather)
+    TextView tvWeather;
+    @BindView(R.id.home_scroll)
+    MonitorScrollView homeScroll;
+    Unbinder unbinder1;
+
     private List list;
-    private BannerLayout bannerLayout;
-    private HomeListAdapter adapter;
-    private TextView tvWeather;
-    private BannerAdapter mBannerAdapter;
-    private View viewHeader;
-    private BannerLayout banner;
+
 
     @Override
     protected int getContentViewLayout() {
@@ -52,34 +48,17 @@ public class HomeFragment extends BaseFragment implements HomeListView.OnScrollC
     @Override
     protected void initView() {
 
-        viewHeader = LayoutInflater.from(getContext()).inflate(R.layout.list_header, listHomeGoods, false);
-        banner = (BannerLayout) viewHeader.findViewById(R.id.bannerlayout);
-        initList();
         initToolBar();
-
-
-    }
-
-    private void initToolBar() {
-
-        homeToolbar.getBackground().setAlpha(0);
-        homeToolbar.setTitle("");
-        ((AppCompatActivity)getActivity()).setSupportActionBar(homeToolbar);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            WindowManager.LayoutParams layoutParams = getActivity().getWindow().getAttributes();
-            layoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | layoutParams.flags);
-        }
-
-        listHomeGoods.setOnScrollChangedListener(this);
+        initBannerLayout();
+        initScroll();
 
     }
 
-    private void initList() {
+    private void initScroll() {
+        homeScroll.setOnScrollChangedListener(this);
+    }
 
-
-        bannerLayout = ButterKnife.findById(viewHeader, bannerlayout);
-        tvWeather = ButterKnife.findById(viewHeader, tv_weather);
-
+    private void initBannerLayout() {
         tvWeather.setText("1111111111111111111111162167521879198729581275786479452966574672958297529827958952979");
         tvWeather.setSelected(true);
 
@@ -91,28 +70,49 @@ public class HomeFragment extends BaseFragment implements HomeListView.OnScrollC
         list.add(v2);
         list.add(v3);
 
-        mBannerAdapter = new BannerAdapter(list);
-        bannerLayout.setAdapter(list);
+        //mBannerAdapter = new BannerAdapter(list);
+        bannerlayout.setAdapter(list);
 
-        List listData = new ArrayList();
-        for (int i = 0; i < 3; i++) {
-            listData.add(i + "  ");
-        }
-        adapter = new HomeListAdapter();
-        listHomeGoods.addHeaderView(viewHeader);
-        adapter.addAll(listData);
-        listHomeGoods.setAdapter(adapter);
     }
 
 
+    private void initToolBar() {
+
+        homeToolbar.getBackground().setAlpha(0);
+        homeToolbar.setTitle("");
+        ((AppCompatActivity) getActivity()).setSupportActionBar(homeToolbar);
+
+
+
+    }
+
     @Override
-    public void onScrollChanged(ListView who, int l, int t, int oldl, int oldt) {
-        float height = banner.getHeight();  //获取图片的高度
-        if (oldt < height){
-            int i = Float.valueOf(oldt/height * 255).intValue();    //i 有可能小于 0
-            homeToolbar.getBackground().setAlpha(Math.max(i,0));   // 0~255 透明度
-        }else {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder1 = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder1.unbind();
+    }
+
+    @Override
+    public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
+        float height = bannerlayout.getHeight();  //获取图片的高度
+        if (oldt < height) {
+            int i = Float.valueOf(oldt / height * 255).intValue();    //i 有可能小于 0
+            homeToolbar.getBackground().setAlpha(Math.max(i, 0));   // 0~255 透明度
+        } else {
             homeToolbar.getBackground().setAlpha(255);
         }
     }
+
 }
+
+
+
+

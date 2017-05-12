@@ -9,7 +9,7 @@ import android.widget.ListView;
  */
 
 public class HomeListView extends ListView {
-    private OnScrollChangedListener onScrollChangedListener;
+    private OnScrollListener onScrollListener;
     public HomeListView(Context context) {
         super(context);
     }
@@ -22,18 +22,5 @@ public class HomeListView extends ListView {
         super(context, attrs, defStyleAttr);
     }
 
-    @Override
-    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        super.onScrollChanged(l, t, oldl, oldt);
-        if (onScrollChangedListener != null){
 
-            onScrollChangedListener.onScrollChanged(this,l,t,oldl,oldt);
-        }
-    }
-    public void setOnScrollChangedListener(OnScrollChangedListener listener) {
-        onScrollChangedListener = listener;
-    }
-    public interface OnScrollChangedListener {
-        void onScrollChanged(ListView who, int l, int t, int oldl, int oldt);
-    }
 }

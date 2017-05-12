@@ -5,24 +5,72 @@
     android:layout_height="match_parent">
 
 
-    <com.example.administrator.layotdemo.home.HomeListView
+    <!--<com.example.administrator.layotdemo.home.HomeListView
         android:id="@+id/list_home_goods"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/gray_light"
-        android:dividerHeight="5dp"
-        android:scrollbars="none"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:divider="@color/gray_light"
+        android:dividerHeight="5dp"
+        android:scrollbars="none" />-->
+
+    <com.example.administrator.layotdemo.home.MonitorScrollView
+        android:id="@+id/home_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/list_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_light" />
+
+            <include
+                layout="@layout/housing_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/gray_light" />
+
+            <include
+                layout="@layout/hot_shop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/gray_light" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@color/white"></RelativeLayout>
+
+        </LinearLayout>
+    </com.example.administrator.layotdemo.home.MonitorScrollView>
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/home_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
-        android:fitsSystemWindows="true"
-        android:background="@color/color_green">
+        android:background="#66CD00"
+        android:fitsSystemWindows="true">
+
 
         <TextView
             android:layout_width="wrap_content"

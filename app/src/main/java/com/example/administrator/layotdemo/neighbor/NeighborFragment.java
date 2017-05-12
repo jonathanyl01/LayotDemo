@@ -1,22 +1,18 @@
 package com.example.administrator.layotdemo.neighbor;
 
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.widget.Toolbar;
 
-import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.R;
+import com.example.administrator.layotdemo.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 public class NeighborFragment extends BaseFragment {
@@ -24,6 +20,8 @@ public class NeighborFragment extends BaseFragment {
     TabLayout tab;
     @BindView(R.id.neighbor_viewpager)
     ViewPager neighborViewpager;
+    @BindView(R.id.neighbor_toolbar)
+    Toolbar neighborToolbar;
     private List<Fragment> listFragment;
     private List<String> listTitle;
     private HousingFragment housingFragment;
@@ -37,6 +35,19 @@ public class NeighborFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+
+        initTab();
+        initToolBar();
+
+
+
+    }
+
+    private void initToolBar() {
+
+    }
+
+    private void initTab() {
 
 
         housingFragment = new HousingFragment();
@@ -57,17 +68,10 @@ public class NeighborFragment extends BaseFragment {
         tab.addTab(tab.newTab().setText(listTitle.get(1)));
         tab.addTab(tab.newTab().setText(listTitle.get(2)));
         FragmentManager manager = getActivity().getSupportFragmentManager();
-        NeighborAdapter adapter = new NeighborAdapter(manager,listFragment,listTitle);
+        NeighborAdapter adapter = new NeighborAdapter(manager, listFragment, listTitle);
         neighborViewpager.setAdapter(adapter);
         tab.setupWithViewPager(neighborViewpager);
-
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
-    }
+
 }
