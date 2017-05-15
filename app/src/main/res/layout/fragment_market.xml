@@ -14,27 +14,71 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="商城"
-            android:layout_gravity = "center"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
     </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.example.administrator.layotdemo.base.banner.BannerLayout
-        android:id="@+id/market_bannerlayout"
-        android:layout_width="match_parent"
-        android:layout_height="150dp" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="@color/gray_light"/>
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/market_two"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="@color/gray_light"/>
+            <com.example.administrator.layotdemo.base.banner.BannerLayout
+                android:id="@+id/market_bannerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/gray_light" />
+
+            <include
+                layout="@layout/market_two"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/gray_light" />
+
+            <include
+                layout="@layout/layout_todaystore"
+                android:layout_width="match_parent"
+                android:layout_height="130dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/gray_light" />
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                layout="@layout/layout_market_recommand"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/gray_light">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="猜你喜欢"
+                    android:textColor="#FF0000"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                layout="@layout/layout_guideyoulike"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
 
 </LinearLayout>

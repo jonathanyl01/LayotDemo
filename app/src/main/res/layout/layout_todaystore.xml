@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/re_todaystore"
         android:layout_width="match_parent"
-        android:layout_height="15dp">
+        android:layout_height="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,6 +60,38 @@
             android:layout_toEndOf="@+id/iv_storetitle"
             android:layout_toRightOf="@+id/iv_storetitle"
             android:text="李克快餐" />
+        <TextView
+            android:id="@+id/store_sales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="月售0份"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/store_title"
+            android:layout_alignStart="@+id/store_title" />
+        <TextView
+            android:id="@+id/store_pieces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="起送 ¥ 0.00 配送 ¥ 0.00"
+            android:layout_alignBottom="@+id/iv_storetitle"
+            android:layout_alignLeft="@+id/store_sales"
+            android:layout_alignStart="@+id/store_sales" />
+        <TextView
+            android:id="@+id/store_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30分钟"
+           android:layout_centerVertical="true"
+           android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:id="@+id/store_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1234m"
+            android:layout_alignBottom="@+id/iv_storetitle"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
 
     </RelativeLayout>
 

@@ -3,7 +3,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingBottom="5dp">
 
@@ -23,74 +23,85 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/gray_light">
-
-        <TextView
-            android:id="@+id/new_title"
-            android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:text="新闻"
-            android:textSize="20sp" />
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/gray_light">
 
-    <include
-        layout="@layout/layout_news"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/new_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="新闻"
+                    android:textSize="20sp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/gray_light">
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/polity_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:text="政务"
-            android:textSize="20sp" />
+            <include
+                layout="@layout/layout_news"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/gray_light">
 
-    <include
-        layout="@layout/layout_plity"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5" />
+                <TextView
+                    android:id="@+id/polity_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="政务"
+                    android:textSize="20sp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/gray_light">
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/convenience_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:text="便民"
-            android:textSize="20sp" />
+            <include
+                layout="@layout/layout_plity"
+                android:layout_width="match_parent"
+                android:layout_height="75dp" />
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/gray_light">
 
-    <include
-        layout="@layout/layout_convenience"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/convenience_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="便民"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <include
+                layout="@layout/layout_convenience"
+                android:layout_width="match_parent"
+                android:layout_height="170dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
 </LinearLayout>
 
 
