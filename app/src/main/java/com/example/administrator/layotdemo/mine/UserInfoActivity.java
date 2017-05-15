@@ -1,12 +1,16 @@
 package com.example.administrator.layotdemo.mine;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseActivity;
@@ -17,6 +21,7 @@ import org.hybridsquad.android.library.CropHelper;
 import org.hybridsquad.android.library.CropParams;
 
 import java.io.File;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -42,10 +47,15 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
     RelativeLayout reSex;
     @BindView(R.id.re_sign)
     RelativeLayout reSign;
+    @BindView(R.id.tv_birthday)
+    TextView tvBirthday;
+    @BindView(R.id.tv_username)
+    TextView userName;
     private IconSelectWindow mSelectWindow;
     private QrCodeWindow qrCodeWindow;
     private ActivityUtils activityUtils;
-
+    final int DATE_DIALOG = 1;
+    int mYear, mMonth, mDay;
 
     @Override
     protected int getContentViewLayout() {
@@ -55,7 +65,14 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
     @Override
     protected void initView() {
         initToolBar();
+        initName();//接收修改后的姓名
 
+    }
+
+
+    private void initName() {
+        Intent intent = this.getIntent();
+        userName.setText(intent.getStringExtra("name"));
     }
 
     private void initToolBar() {
@@ -97,8 +114,14 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
                 activityUtils.openActivity(this,AddressActivity.class);
                 break;
             case R.id.re_birthday:
+                birthdaySelect();
                 break;
             case R.id.re_name:
+                if (activityUtils == null){
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(this,NameActivity.class);
+                finish();
                 break;
             case R.id.re_neekname:
                 break;
@@ -108,6 +131,40 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
                 break;
         }
     }
+
+    private void birthdaySelect() {
+
+
+        showDialog(DATE_DIALOG);
+        final Calendar ca = Calendar.getInstance();
+        mYear = ca.get(Calendar.YEAR);
+        mMonth = ca.get(Calendar.MONTH);
+        mDay = ca.get(Calendar.DAY_OF_MONTH);
+    }
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DATE_DIALOG:
+                return new DatePickerDialog(this, mdateListener, mYear, mMonth, mDay);
+        }
+        return null;
+    }
+
+    public void display() {
+        tvBirthday.setText(new StringBuffer().append(mYear).append("-").append(mMonth + 1).append("-").append(mDay).append(" "));
+    }
+
+    private DatePickerDialog.OnDateSetListener mdateListener = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            mYear = year;
+            mMonth = monthOfYear;
+            mDay = dayOfMonth;
+            display();
+        }
+    };
 
     // 跳转的监听
     private IconSelectWindow.Listener mListener = new IconSelectWindow.Listener() {

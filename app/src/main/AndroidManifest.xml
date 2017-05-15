@@ -37,7 +37,8 @@
         <activity android:name=".mine.IntegralActivity" />
         <activity android:name=".mine.TicketActivity" />
         <activity android:name=".mine.UserInfoActivity" />
-        <activity android:name=".mine.AddressActivity"></activity>
+        <activity android:name=".mine.AddressActivity" />
+        <activity android:name=".mine.NameActivity"></activity>
     </application>
 
 </manifest>
