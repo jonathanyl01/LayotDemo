@@ -38,7 +38,9 @@
         <activity android:name=".mine.TicketActivity" />
         <activity android:name=".mine.UserInfoActivity" />
         <activity android:name=".mine.AddressActivity" />
-        <activity android:name=".mine.NameActivity"></activity>
+        <activity android:name=".mine.NameActivity" />
+        <activity android:name=".mine.NeeknameActivity" />
+        <activity android:name=".mine.SignActivity"></activity>
     </application>
 
 </manifest>

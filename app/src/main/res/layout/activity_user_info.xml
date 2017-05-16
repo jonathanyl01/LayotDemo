@@ -253,6 +253,7 @@
             android:layout_height="wrap_content"
             android:textOff="女"
             android:textOn="男"
+            android:background="@color/color_green"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"/>
