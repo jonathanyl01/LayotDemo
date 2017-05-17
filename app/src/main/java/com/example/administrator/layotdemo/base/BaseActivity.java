@@ -1,5 +1,6 @@
 package com.example.administrator.layotdemo.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 
@@ -23,6 +24,7 @@ public abstract class BaseActivity extends TransitionActivity{
     }
 
     protected abstract void initView();
+    protected abstract void initResultData(int requestCode, int resultCode, Intent data);
 
     // 让子类来告诉我们布局
     @LayoutRes
@@ -34,5 +36,11 @@ public abstract class BaseActivity extends TransitionActivity{
         super.onDestroy();
         mUnbinder.unbind();
         mUnbinder = null;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        initResultData(requestCode, resultCode, data);
     }
 }

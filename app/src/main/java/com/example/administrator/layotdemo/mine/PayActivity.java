@@ -1,5 +1,6 @@
 package com.example.administrator.layotdemo.mine;
 
+import android.content.Intent;
 import android.support.v7.widget.Toolbar;
 
 import com.example.administrator.layotdemo.R;
@@ -19,6 +20,11 @@ public class PayActivity extends BaseActivity {
     protected void initView() {
 
         initTollbar();
+
+    }
+
+    @Override
+    protected void initResultData(int requestCode, int resultCode, Intent data) {
 
     }
 

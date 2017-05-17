@@ -1,5 +1,6 @@
 package com.example.administrator.layotdemo.mine;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -7,7 +8,6 @@ import android.widget.Toast;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseActivity;
-import com.example.administrator.layotdemo.base.User;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -28,6 +28,11 @@ public class NeeknameActivity extends BaseActivity {
     }
 
     @Override
+    protected void initResultData(int requestCode, int resultCode, Intent data) {
+
+    }
+
+    @Override
     protected int getContentViewLayout() {
         return R.layout.activity_neek_name;
     }
@@ -43,8 +48,10 @@ public class NeeknameActivity extends BaseActivity {
                     Toast.makeText(this,"不能为空",Toast.LENGTH_SHORT).show();
                 }else {
                     //EventBus.getDefault().post(new NeeknameEvent(neeknameEt.getText().toString().trim()));
-                    User user = new User();
-                    user.setNeekname(neekname);
+
+                    Intent intent = new Intent();
+                    intent.putExtra("neekname",neekname.trim());
+                    setResult(2000,intent);
                     finish();
                 }
                 break;

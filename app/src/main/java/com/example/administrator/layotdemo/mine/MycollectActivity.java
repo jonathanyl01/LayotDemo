@@ -1,5 +1,6 @@
 package com.example.administrator.layotdemo.mine;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -41,6 +42,11 @@ public class MycollectActivity extends BaseActivity {
 
         initToolbar();
         initTab();
+
+    }
+
+    @Override
+    protected void initResultData(int requestCode, int resultCode, Intent data) {
 
     }
 

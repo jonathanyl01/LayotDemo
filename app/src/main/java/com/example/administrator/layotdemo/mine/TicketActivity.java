@@ -1,5 +1,6 @@
 package com.example.administrator.layotdemo.mine;
 
+import android.content.Intent;
 import android.support.v7.widget.Toolbar;
 
 import com.example.administrator.layotdemo.R;
@@ -20,6 +21,10 @@ public class TicketActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initResultData(int requestCode, int resultCode, Intent data) {
+
+    }
 
 
     @Override

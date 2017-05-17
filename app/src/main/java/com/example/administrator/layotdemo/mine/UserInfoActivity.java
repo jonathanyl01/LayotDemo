@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseActivity;
-import com.example.administrator.layotdemo.base.User;
 import com.example.administrator.layotdemo.utils.ActivityUtils;
 
 import org.hybridsquad.android.library.CropHandler;
@@ -28,7 +27,7 @@ import java.util.Calendar;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class UserInfoActivity extends BaseActivity implements AccountView,UserSet {
+public class UserInfoActivity extends BaseActivity implements AccountView {
 
 
     @BindView(R.id.userinfo_toolbar)
@@ -60,7 +59,7 @@ public class UserInfoActivity extends BaseActivity implements AccountView,UserSe
     private ActivityUtils activityUtils;
     final int DATE_DIALOG = 1;
     int mYear, mMonth, mDay;
-
+    private Intent intent;
 
 
     @Override
@@ -73,36 +72,36 @@ public class UserInfoActivity extends BaseActivity implements AccountView,UserSe
         //EventBus.getDefault().register(this);
         initToolBar();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("user",MODE_PRIVATE);
-        neekname.setText(sharedPreferences.getString("neekname",neekname.getText().toString()));
-        userName.setText(sharedPreferences.getString("name",userName.getText().toString()));
+        SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
+        neekname.setText(sharedPreferences.getString("neekname", neekname.getText().toString()));
+        userName.setText(sharedPreferences.getString("name", userName.getText().toString()));
+        tvBirthday.setText(sharedPreferences.getString("birthday", tvBirthday.getText().toString()));
 
     }
 
     @Override
+    protected void initResultData(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1000 && resultCode == 1000) {
+            String name = data.getStringExtra("name");
+            userName.setText(name);
+        } else if (requestCode == 2000 && requestCode == 2000) {
+            String neekname1 = data.getStringExtra("neekname");
+            neekname.setText(neekname1);
+        }
+    }
+
+
+    @Override
     protected void onStop() {
         super.onStop();
-        SharedPreferences sharedPreferences = getSharedPreferences("user",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("neekname",neekname.getText().toString());
-        editor.putString("name",userName.getText().toString());
+        editor.putString("neekname", neekname.getText().toString());
+        editor.putString("name", userName.getText().toString());
+        editor.putString("birthday", tvBirthday.getText().toString());
         editor.commit();
     }
 
- /*   @Subscribe
-    public void onEventMainThread(NeeknameEvent neeknameEventevent) {
-        String neek = neeknameEventevent.getMsg();
-        neekname.setText(neek);
-
-
-    }*/
-
-/*
-    private void initName() {
-        Intent intent = this.getIntent();
-        userName.setText(intent.getStringExtra("name"));
-        neekname.setText(intent.getStringExtra("neekname"));
-    }*/
 
     private void initToolBar() {
         setSupportActionBar(userinfoToolbar);
@@ -144,29 +143,25 @@ public class UserInfoActivity extends BaseActivity implements AccountView,UserSe
                 birthdaySelect();
                 break;
             case R.id.re_name:
-                if (activityUtils == null) {
-                    activityUtils = new ActivityUtils();
-                }
-                activityUtils.openActivity(this, NameActivity.class);
+
+                intent = new Intent(this, NameActivity.class);
+                startActivityForResult(intent, 1000);
 
                 break;
             case R.id.re_neekname:
-                if (activityUtils == null) {
-                    activityUtils = new ActivityUtils();
-                }
-                activityUtils.openActivity(this, NeeknameActivity.class);
+                intent = new Intent(this, NeeknameActivity.class);
+                startActivityForResult(intent, 2000);
 
                 break;
             case R.id.re_sex:
                 break;
             case R.id.re_sign:
-                if (activityUtils == null) {
-                    activityUtils = new ActivityUtils();
-                }
-                activityUtils.openActivity(this, SignActivity.class);
+                intent = new Intent(this, SignActivity.class);
+                startActivityForResult(intent, 3000);
                 break;
         }
     }
+
 
     private void birthdaySelect() {
 
@@ -278,7 +273,7 @@ public class UserInfoActivity extends BaseActivity implements AccountView,UserSe
         if (mCropHandler.getCropParams() != null)
             CropHelper.clearCachedCropFile(mCropHandler.getCropParams().uri);
         super.onDestroy();
-       // EventBus.getDefault().unregister(this);
+        // EventBus.getDefault().unregister(this);
     }
 
     // 返回箭头的处理
@@ -311,11 +306,6 @@ public class UserInfoActivity extends BaseActivity implements AccountView,UserSe
     }
 
 
-    @Override
-    public void setUser(User user) {
-        userName.setText(user.getName());
-        neekname.setText(user.getNeekname());
-    }
 }
 
 

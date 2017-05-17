@@ -1,5 +1,6 @@
 package com.example.administrator.layotdemo.mine;
 
+import android.content.Intent;
 import android.support.v7.widget.Toolbar;
 import android.widget.RelativeLayout;
 
@@ -28,6 +29,11 @@ public class MySettingActivity extends BaseActivity {
     protected void initView() {
 
         initToolBar();
+
+    }
+
+    @Override
+    protected void initResultData(int requestCode, int resultCode, Intent data) {
 
     }
 

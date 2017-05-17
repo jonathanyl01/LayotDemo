@@ -1,5 +1,6 @@
 package com.example.administrator.layotdemo.mine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.layotdemo.R;
-import com.example.administrator.layotdemo.base.User;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -95,8 +95,9 @@ public class NameActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(this, "不能为空", Toast.LENGTH_SHORT).show();
                 }else{
-                    User user = new User();
-                    user.setName(name);
+                    Intent intent = new Intent();
+                    intent.putExtra("name",name);
+                    setResult(1000,intent);
                     finish();
                 }
 
