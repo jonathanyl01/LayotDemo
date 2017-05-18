@@ -43,10 +43,10 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -80,10 +80,10 @@
             android:id="@+id/iv_qrcode_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -108,10 +108,10 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -146,10 +146,10 @@
             android:id="@+id/iv_birthday_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -185,9 +185,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/iv_name_right"
             android:layout_marginRight="10dp"
-            android:text="原磊"/>
+            android:layout_toLeftOf="@+id/iv_name_right"
+            android:text="原磊" />
 
     </RelativeLayout>
 
@@ -214,18 +214,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/iv_neekname_right"
             android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_neekname_right"
             android:text="uuu" />
 
         <ImageView
             android:id="@+id/iv_neekname_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -247,15 +247,12 @@
             android:layout_marginLeft="10dp"
             android:text="性别" />
 
-        <ToggleButton
-            android:id="@+id/girl_button"
+        <Spinner
+            android:id="@+id/sex_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOff="女"
-            android:textOn="男"
-            android:background="@color/color_green"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="5dp"/>
 
 
@@ -273,19 +270,35 @@
         android:layout_weight="1">
 
         <TextView
+            android:id="@+id/sign_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:text="个人签名" />
 
-        <ImageView
+        <TextView
+            android:id="@+id/tvsign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/iv_sign"
+            android:layout_toRightOf="@+id/sign_title"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="个人签名"
+            android:textColor="@color/color_green" />
+
+        <ImageView
+            android:id="@+id/iv_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 

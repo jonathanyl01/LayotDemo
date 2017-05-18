@@ -1,7 +1,6 @@
 package com.example.administrator.layotdemo.mine;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.widget.EditText;
@@ -29,7 +28,6 @@ public class SignActivity extends BaseActivity {
     @Override
     protected void initView() {
         initToolBar();
-        readShared();
 
     }
 
@@ -60,29 +58,12 @@ public class SignActivity extends BaseActivity {
         } else if (sign.length() > 200) {
             Toast.makeText(this, "最多只能输入200字", Toast.LENGTH_SHORT).show();
         } else {
+            Intent intent = new Intent();
+            intent.putExtra("sign",sign.trim());
+            setResult(3000,intent);
             finish();
         }
 
-
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        writeShared();
-    }
-
-    private void writeShared() {
-
-        SharedPreferences sharedPreferences = getSharedPreferences("edit", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("sign", signEt.getText().toString().trim());
-        editor.commit();
-    }
-
-    private void readShared() {
-        SharedPreferences sharedPreferences = getSharedPreferences("edit", MODE_PRIVATE);
-        String message = sharedPreferences.getString("sign","sign");
-        signEt.setText(message);
-    }
 }

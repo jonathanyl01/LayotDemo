@@ -9,8 +9,11 @@ import android.net.Uri;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.administrator.layotdemo.R;
@@ -22,7 +25,9 @@ import org.hybridsquad.android.library.CropHelper;
 import org.hybridsquad.android.library.CropParams;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -54,12 +59,17 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
     TextView userName;
     @BindView(R.id.tv_neekname)
     TextView neekname;
+    @BindView(R.id.tvsign)
+    TextView tvsign;
+    @BindView(R.id.sex_spinner)
+    Spinner sexspinner;
     private IconSelectWindow mSelectWindow;
     private QrCodeWindow qrCodeWindow;
     private ActivityUtils activityUtils;
     final int DATE_DIALOG = 1;
     int mYear, mMonth, mDay;
     private Intent intent;
+    int sexPosistion;
 
 
     @Override
@@ -69,14 +79,41 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
 
     @Override
     protected void initView() {
-        //EventBus.getDefault().register(this);
-        initToolBar();
 
+        initToolBar();
+        initSpinner();
+        readShare();
+
+
+    }
+
+    private void readShare() {
         SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
         neekname.setText(sharedPreferences.getString("neekname", neekname.getText().toString()));
         userName.setText(sharedPreferences.getString("name", userName.getText().toString()));
         tvBirthday.setText(sharedPreferences.getString("birthday", tvBirthday.getText().toString()));
+        tvsign.setText(sharedPreferences.getString("sign", tvsign.getText().toString()));
+        sexspinner.setSelection(sharedPreferences.getInt("sex",sexspinner.getSelectedItemPosition()));
+    }
 
+    private void initSpinner() {
+        List<String> sexList = new ArrayList<>();
+        sexList.add("男");
+        sexList.add("女");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sexList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sexspinner.setAdapter(adapter);
+        sexspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+              sexPosistion = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     @Override
@@ -84,9 +121,14 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
         if (requestCode == 1000 && resultCode == 1000) {
             String name = data.getStringExtra("name");
             userName.setText(name);
-        } else if (requestCode == 2000 && requestCode == 2000) {
+        }
+        if (requestCode == 2000 && resultCode == 2000) {
             String neekname1 = data.getStringExtra("neekname");
             neekname.setText(neekname1);
+        }
+        if (requestCode == 3000 && resultCode == 3000) {
+            String sign = data.getStringExtra("sign");
+            tvsign.setText(sign);
         }
     }
 
@@ -99,6 +141,8 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
         editor.putString("neekname", neekname.getText().toString());
         editor.putString("name", userName.getText().toString());
         editor.putString("birthday", tvBirthday.getText().toString());
+        editor.putString("sign", tvsign.getText().toString());
+        editor.putInt("sex",sexPosistion);
         editor.commit();
     }
 
@@ -113,7 +157,7 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
     }
 
 
-    @OnClick({R.id.re_photo, R.id.re_qrcode, R.id.re_address, R.id.re_birthday, R.id.re_name, R.id.re_neekname, R.id.re_sex, R.id.re_sign})
+    @OnClick({R.id.re_photo, R.id.re_qrcode, R.id.re_address, R.id.re_birthday, R.id.re_name, R.id.re_neekname, R.id.re_sign})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.re_photo:
@@ -153,8 +197,7 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
                 startActivityForResult(intent, 2000);
 
                 break;
-            case R.id.re_sex:
-                break;
+
             case R.id.re_sign:
                 intent = new Intent(this, SignActivity.class);
                 startActivityForResult(intent, 3000);
