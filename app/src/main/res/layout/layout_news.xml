@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="时政军事"
+                android:text="文化娱乐"
                 android:layout_toRightOf="@+id/iv_culture"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
@@ -117,7 +117,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="经济动态"
+                android:text="体育动态"
                 android:layout_toRightOf="@+id/iv_sport"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"

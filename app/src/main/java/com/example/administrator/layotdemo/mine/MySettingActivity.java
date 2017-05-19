@@ -25,6 +25,7 @@ public class MySettingActivity extends BaseActivity {
     RelativeLayout reAboutlf;
     @BindView(R.id.re_clean)
     RelativeLayout reClean;
+
     @Override
     protected void initView() {
 

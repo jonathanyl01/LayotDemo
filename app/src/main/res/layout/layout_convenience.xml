@@ -10,6 +10,7 @@
         android:layout_weight="1">
 
         <RelativeLayout
+            android:id="@+id/re_inform"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -36,6 +37,7 @@
             android:layout_height="match_parent"
             android:background="@color/gray_light"/>
         <RelativeLayout
+            android:id="@+id/re_pay"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -63,6 +65,7 @@
             android:background="@color/gray_light"/>
 
         <RelativeLayout
+            android:id="@+id/re_server"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -90,6 +93,7 @@
             android:background="@color/gray_light"/>
 
         <RelativeLayout
+            android:id="@+id/re_house"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -126,6 +130,7 @@
         android:layout_weight="1">
 
         <RelativeLayout
+            android:id="@+id/re_rent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -152,6 +157,7 @@
             android:layout_height="match_parent"
             android:background="@color/gray_light"/>
         <RelativeLayout
+            android:id="@+id/re_opinion"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -179,6 +185,7 @@
             android:background="@color/gray_light"/>
 
         <RelativeLayout
+            android:id="@+id/re_phone"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -206,6 +213,7 @@
             android:background="@color/gray_light"/>
 
         <RelativeLayout
+            android:id="@+id/re_lock"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">

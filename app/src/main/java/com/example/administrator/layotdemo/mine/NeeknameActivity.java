@@ -47,7 +47,7 @@ public class NeeknameActivity extends BaseActivity {
                 if (neekname.isEmpty()){
                     Toast.makeText(this,"不能为空",Toast.LENGTH_SHORT).show();
                 }else {
-                    //EventBus.getDefault().post(new NeeknameEvent(neeknameEt.getText().toString().trim()));
+
 
                     Intent intent = new Intent();
                     intent.putExtra("neekname",neekname.trim());

@@ -40,7 +40,11 @@
         <activity android:name=".mine.AddressActivity" />
         <activity android:name=".mine.NameActivity" />
         <activity android:name=".mine.NeeknameActivity" />
-        <activity android:name=".mine.SignActivity"></activity>
+        <activity android:name=".mine.SignActivity" />
+        <activity android:name=".serve.activity.SoliderActivity" />
+        <activity android:name=".serve.activity.GuideActivity" />
+        <activity android:name=".serve.activity.InformActivity" />
+        <activity android:name=".serve.activity.PayManagerActivity"></activity>
     </application>
 
 </manifest>
