@@ -9,7 +9,12 @@ import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.serve.activity.BillActivity;
 import com.example.administrator.layotdemo.serve.activity.GuideActivity;
+import com.example.administrator.layotdemo.serve.activity.HouseRentActivity;
+import com.example.administrator.layotdemo.serve.activity.HousekeepingActivity;
 import com.example.administrator.layotdemo.serve.activity.InformActivity;
+import com.example.administrator.layotdemo.serve.activity.PeopleOpinionActivity;
+import com.example.administrator.layotdemo.serve.activity.PhoneActivity;
+import com.example.administrator.layotdemo.serve.activity.PropertyServicesActivity;
 import com.example.administrator.layotdemo.serve.activity.SoliderActivity;
 import com.example.administrator.layotdemo.utils.ActivityUtils;
 
@@ -118,14 +123,34 @@ public class ServeFragment extends BaseFragment {
                 activityUtils.openActivity(getContext(), BillActivity.class);
                 break;
             case R.id.re_server:
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), PropertyServicesActivity.class);
                 break;
             case R.id.re_house:
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), HousekeepingActivity.class);
                 break;
             case R.id.re_rent:
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), HouseRentActivity.class);
                 break;
             case R.id.re_opinion:
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), PeopleOpinionActivity.class);
                 break;
             case R.id.re_phone:
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), PhoneActivity.class);
                 break;
             case R.id.re_lock:
                 break;

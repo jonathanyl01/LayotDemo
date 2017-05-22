@@ -4,12 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.base.banner.BannerLayout;
+import com.example.administrator.layotdemo.utils.ActivityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,8 +33,11 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
     TextView tvWeather;
     @BindView(R.id.home_scroll)
     MonitorScrollView homeScroll;
+    @BindView(R.id.iv_scan)
+    ImageView ivScan;
 
     private List list;
+    private ActivityUtils activityUtils;
 
 
     @Override
@@ -46,6 +51,16 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
         initToolBar();
         initBannerLayout();
         initScroll();
+        ivScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+
+                }
+                activityUtils.openActivity(getContext(), ScannerActivity.class);
+            }
+        });
 
     }
 
@@ -76,7 +91,6 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
         homeToolbar.getBackground().setAlpha(110);
         homeToolbar.setTitle("");
         ((AppCompatActivity) getActivity()).setSupportActionBar(homeToolbar);
-
 
 
     }
