@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.READ_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -52,7 +52,8 @@
         <activity android:name=".serve.activity.HouseRentActivity" />
         <activity android:name=".serve.activity.PeopleOpinionActivity" />
         <activity android:name=".serve.activity.PhoneActivity" />
-        <activity android:name=".home.ScannerActivity"></activity>
+        <activity android:name=".home.ScannerActivity" />
+        <activity android:name=".mine.acyivity.MessageRemindActivity"></activity>
     </application>
 
 </manifest>
