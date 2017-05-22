@@ -7,7 +7,9 @@ import android.widget.RelativeLayout;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseFragment;
+import com.example.administrator.layotdemo.serve.activity.BillActivity;
 import com.example.administrator.layotdemo.serve.activity.GuideActivity;
+import com.example.administrator.layotdemo.serve.activity.InformActivity;
 import com.example.administrator.layotdemo.serve.activity.SoliderActivity;
 import com.example.administrator.layotdemo.utils.ActivityUtils;
 
@@ -104,8 +106,16 @@ public class ServeFragment extends BaseFragment {
 
                 break;
             case R.id.re_inform:
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), InformActivity.class);
                 break;
             case R.id.re_pay:
+                if (activityUtils == null) {
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), BillActivity.class);
                 break;
             case R.id.re_server:
                 break;

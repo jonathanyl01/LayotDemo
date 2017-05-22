@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <android.support.v7.widget.Toolbar
         android:id="@+id/inform_toolbar"
@@ -17,5 +18,25 @@
             android:textSize="20sp" />
 
     </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/inform_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabSelectedTextColor="@color/brown"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/black"
+        android:layout_below="@+id/neighbor_toolbar"
+        app:tabMode="scrollable"
+        ></android.support.design.widget.TabLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/inform_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab">
+
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

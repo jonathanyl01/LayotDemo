@@ -1,6 +1,7 @@
 package com.example.administrator.layotdemo.serve.activity;
 
 import android.content.Intent;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import com.example.administrator.layotdemo.R;
@@ -17,12 +18,23 @@ public class GuideActivity extends BaseActivity {
 
     @BindView(R.id.list_title)
     ListView listTitle;
+    @BindView(R.id.guide_toolbar)
+    Toolbar toolbar;
     private List<String> title;
 
     @Override
     protected void initView() {
         initTitleList();
+        initToolbar();
 
+    }
+
+    private void initToolbar() {
+        setSupportActionBar(toolbar);
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setTitle("");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private void initTitleList() {

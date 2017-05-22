@@ -44,7 +44,8 @@
         <activity android:name=".serve.activity.SoliderActivity" />
         <activity android:name=".serve.activity.GuideActivity" />
         <activity android:name=".serve.activity.InformActivity" />
-        <activity android:name=".serve.activity.PayManagerActivity"></activity>
+        <activity android:name=".serve.activity.PayManagerActivity" />
+        <activity android:name=".serve.activity.BillActivity"></activity>
     </application>
 
 </manifest>
