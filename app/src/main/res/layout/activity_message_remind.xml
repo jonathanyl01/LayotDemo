@@ -36,7 +36,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:textSize="15sp"/>
-        <com.example.administrator.layotdemo.mine.view.SlideSwitchView
+        <com.example.administrator.layotdemo.mine.view.SwitchButton
             android:id="@+id/iv_remind"
             android:layout_width="20dp"
             android:layout_height="10dp"
@@ -44,6 +44,10 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"/>
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_light"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -55,7 +59,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:textSize="15sp"/>
-        <com.example.administrator.layotdemo.mine.view.SlideSwitchView
+        <com.example.administrator.layotdemo.mine.view.SwitchButton
             android:id="@+id/iv_sound"
             android:layout_width="35dp"
             android:layout_height="20dp"
@@ -63,6 +67,10 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"/>
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_light"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -74,10 +82,10 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:textSize="15sp"/>
-        <com.example.administrator.layotdemo.mine.view.SlideSwitchView
+        <com.example.administrator.layotdemo.mine.view.SwitchButton
             android:id="@+id/iv_shake"
-            android:layout_width="35dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"/>

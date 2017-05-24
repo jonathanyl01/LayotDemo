@@ -1,22 +1,29 @@
 package com.example.administrator.layotdemo.home;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.base.banner.BannerLayout;
+import com.example.administrator.layotdemo.home.activity.HousingNewsActivity;
 import com.example.administrator.layotdemo.utils.ActivityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
 
 
 /**
@@ -35,9 +42,15 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
     MonitorScrollView homeScroll;
     @BindView(R.id.iv_scan)
     ImageView ivScan;
+    @BindView(R.id.re_housingnews)
+    RelativeLayout reHousingnews;
+    @BindView(R.id.re_hotshop)
+    RelativeLayout reHotshop;
+    Unbinder unbinder;
 
     private List list;
     private ActivityUtils activityUtils;
+
 
 
     @Override
@@ -106,6 +119,33 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
         }
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    @OnClick({R.id.re_housingnews, R.id.re_hotshop})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.re_housingnews:
+                if (activityUtils == null){
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), HousingNewsActivity.class);
+                break;
+            case R.id.re_hotshop:
+                break;
+        }
+    }
 }
 
 

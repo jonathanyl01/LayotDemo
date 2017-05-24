@@ -53,7 +53,8 @@
         <activity android:name=".serve.activity.PeopleOpinionActivity" />
         <activity android:name=".serve.activity.PhoneActivity" />
         <activity android:name=".home.ScannerActivity" />
-        <activity android:name=".mine.acyivity.MessageRemindActivity"></activity>
+        <activity android:name=".mine.acyivity.MessageRemindActivity" />
+        <activity android:name=".home.activity.HousingNewsActivity"></activity>
     </application>
 
 </manifest>
