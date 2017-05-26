@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.layotdemo.home.ScannerActivity">
+    tools:context="com.kaite.lianzhong.zhsq.home.ScannerActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/scanner_toolbar"
@@ -28,7 +28,7 @@
         android:layout_gravity="center"
         android:layout_below="@+id/scanner_toolbar" />
 
-    <com.example.administrator.layotdemo.home.view.ViewfinderView
+    <com.kaite.lianzhong.zhsq.home.view.ViewfinderView
         android:id="@+id/viewfinder_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

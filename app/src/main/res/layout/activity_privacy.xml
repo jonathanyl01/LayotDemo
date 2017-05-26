@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.layotdemo.mine.acyivity.PrivacyActivity">
+    tools:context="com.kaite.lianzhong.zhsq.mine.acyivity.PrivacyActivity">
     <android.support.v7.widget.Toolbar
 
         android:id="@+id/privacy_toolbar"
@@ -42,7 +42,7 @@
             android:text="加我好友时需要验证"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
-        <com.example.administrator.layotdemo.mine.view.SwitchButton
+        <com.kaite.lianzhong.zhsq.mine.view.SwitchButton
             android:id="@+id/check_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             android:text="允许好友查看我的动态"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
-        <com.example.administrator.layotdemo.mine.view.SwitchButton
+        <com.kaite.lianzhong.zhsq.mine.view.SwitchButton
             android:id="@+id/dynamc_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
             android:text="允许好友查看我的帖子"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
-        <com.example.administrator.layotdemo.mine.view.SwitchButton
+        <com.kaite.lianzhong.zhsq.mine.view.SwitchButton
             android:id="@+id/invitation_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
             android:text="通过手机号搜索到我"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
-        <com.example.administrator.layotdemo.mine.view.SwitchButton
+        <com.kaite.lianzhong.zhsq.mine.view.SwitchButton
             android:id="@+id/search_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
             android:text="向我推荐通讯录好友"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
-        <com.example.administrator.layotdemo.mine.view.SwitchButton
+        <com.kaite.lianzhong.zhsq.mine.view.SwitchButton
             android:id="@+id/recommend_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
             android:text="通过乐福智家账号搜索到我"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
-        <com.example.administrator.layotdemo.mine.view.SwitchButton
+        <com.kaite.lianzhong.zhsq.mine.view.SwitchButton
             android:id="@+id/id_friend_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

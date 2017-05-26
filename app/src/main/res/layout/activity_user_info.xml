@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.layotdemo.mine.UserInfoActivity">
+    tools:context="com.kaite.lianzhong.zhsq.mine.UserInfoActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/userinfo_toolbar"

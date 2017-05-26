@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.layotdemo.serve.activity.HouseRentActivity">
+    tools:context="com.kaite.lianzhong.zhsq.serve.activity.HouseRentActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/rent_toolbar"
         android:layout_width="match_parent"

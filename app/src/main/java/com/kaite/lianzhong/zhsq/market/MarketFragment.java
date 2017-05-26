@@ -1,11 +1,11 @@
-package com.example.administrator.layotdemo.market;
+package com.kaite.lianzhong.zhsq.market;
 
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.example.administrator.layotdemo.R;
-import com.example.administrator.layotdemo.base.BaseFragment;
-import com.example.administrator.layotdemo.base.banner.BannerLayout;
+import com.kaite.lianzhong.zhsq.R;
+import com.kaite.lianzhong.zhsq.base.BaseFragment;
+import com.kaite.lianzhong.zhsq.base.banner.BannerLayout;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -16,7 +16,7 @@
         android:dividerHeight="5dp"
         android:scrollbars="none" />-->
 
-    <com.example.administrator.layotdemo.home.MonitorScrollView
+    <com.kaite.lianzhong.zhsq.home.MonitorScrollView
         android:id="@+id/home_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -61,7 +61,7 @@
 
 
         </LinearLayout>
-    </com.example.administrator.layotdemo.home.MonitorScrollView>
+    </com.kaite.lianzhong.zhsq.home.MonitorScrollView>
 
 
     <android.support.v7.widget.Toolbar

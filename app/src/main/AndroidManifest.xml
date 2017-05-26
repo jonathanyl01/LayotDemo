@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.administrator.layotdemo">
+    package="com.kaite.lianzhong.zhsq">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -58,7 +58,13 @@
         <activity android:name=".home.activity.MoreProductActivity" />
         <activity android:name=".mine.acyivity.PrivacyActivity" />
         <activity android:name=".mine.acyivity.FeedBackActivity" />
-        <activity android:name=".mine.acyivity.FeedBackListActivity"></activity>
+        <activity android:name=".mine.acyivity.FeedBackListActivity" />
+        <activity android:name=".mine.acyivity.PayRecordActivity" />
+        <activity android:name=".mine.acyivity.IntegralMarketActivity" />
+        <activity android:name=".mine.acyivity.IntegralOrderActivity" />
+        <activity android:name=".mine.acyivity.IntegralRecordActivity" />
+        <activity android:name=".mine.acyivity.IntegralRuleActivity" />
+        <activity android:name=".mine.acyivity.IntegralGradeActivity"></activity>
     </application>
 
 </manifest>
