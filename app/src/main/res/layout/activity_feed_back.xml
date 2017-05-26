@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.layotdemo.mine.acyivity.FeedBackActivity"
+    android:weightSum="1">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/feed_back_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="意见反馈"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/feed_back_list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="反馈列表"
+            android:paddingRight="5dp"
+            android:gravity="center"
+            android:textSize="15sp" />
+
+    </android.support.v7.widget.Toolbar>
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="反馈内容"
+        style="@style/AppTheme.EditText.Big"
+        android:textSize="15sp"
+        android:paddingTop="5dp"
+        android:gravity="start"
+        android:inputType="textMultiLine"/>
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="联系方式"
+        android:textSize="15sp"
+        style="@style/AppTheme.EditText.Big"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:id="@+id/send_btn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="提交"
+        android:layout_marginTop="50dp"
+        android:background="@color/color_green"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_weight="0.03" />
+
+</LinearLayout>

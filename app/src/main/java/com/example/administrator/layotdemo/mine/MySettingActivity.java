@@ -7,7 +7,9 @@ import android.widget.RelativeLayout;
 
 import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseActivity;
+import com.example.administrator.layotdemo.mine.acyivity.FeedBackActivity;
 import com.example.administrator.layotdemo.mine.acyivity.MessageRemindActivity;
+import com.example.administrator.layotdemo.mine.acyivity.PrivacyActivity;
 import com.example.administrator.layotdemo.utils.ActivityUtils;
 
 import butterknife.BindView;
@@ -70,6 +72,10 @@ public class MySettingActivity extends BaseActivity {
             case R.id.re_changepassword:
                 break;
             case R.id.re_pravacy:
+                if (activityUtils == null){
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(this, PrivacyActivity.class);
                 break;
             case R.id.re_attention:
                 if (activityUtils == null){
@@ -78,6 +84,10 @@ public class MySettingActivity extends BaseActivity {
                 activityUtils.openActivity(this, MessageRemindActivity.class);
                 break;
             case R.id.re_opinion:
+                if (activityUtils == null){
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(this, FeedBackActivity.class);
                 break;
             case R.id.re_aboutlf:
                 break;

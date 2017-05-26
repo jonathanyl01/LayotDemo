@@ -15,6 +15,7 @@ import com.example.administrator.layotdemo.R;
 import com.example.administrator.layotdemo.base.BaseFragment;
 import com.example.administrator.layotdemo.base.banner.BannerLayout;
 import com.example.administrator.layotdemo.home.activity.HousingNewsActivity;
+import com.example.administrator.layotdemo.home.activity.MoreProductActivity;
 import com.example.administrator.layotdemo.utils.ActivityUtils;
 
 import java.util.ArrayList;
@@ -143,6 +144,10 @@ public class HomeFragment extends BaseFragment implements MonitorScrollView.OnSc
                 activityUtils.openActivity(getContext(), HousingNewsActivity.class);
                 break;
             case R.id.re_hotshop:
+                if (activityUtils == null){
+                    activityUtils = new ActivityUtils();
+                }
+                activityUtils.openActivity(getContext(), MoreProductActivity.class);
                 break;
         }
     }

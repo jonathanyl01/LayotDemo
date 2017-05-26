@@ -83,6 +83,7 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
         initToolBar();
         initSpinner();
         readShare();
+        birthdaySelect();
 
 
     }
@@ -184,7 +185,8 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
                 activityUtils.openActivity(this, AddressActivity.class);
                 break;
             case R.id.re_birthday:
-                birthdaySelect();
+                showDialog(DATE_DIALOG);
+
                 break;
             case R.id.re_name:
 
@@ -209,7 +211,7 @@ public class UserInfoActivity extends BaseActivity implements AccountView {
     private void birthdaySelect() {
 
 
-        showDialog(DATE_DIALOG);
+
         final Calendar ca = Calendar.getInstance();
         mYear = ca.get(Calendar.YEAR);
         mMonth = ca.get(Calendar.MONTH);

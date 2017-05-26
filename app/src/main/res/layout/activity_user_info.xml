@@ -140,7 +140,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/iv_birthday_right"
-            android:text="1994-12-13" />
+            android:text="" />
 
         <ImageView
             android:id="@+id/iv_birthday_right"
@@ -187,7 +187,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/iv_name_right"
-            android:text="原磊" />
+            android:text="" />
 
     </RelativeLayout>
 
@@ -216,7 +216,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/iv_neekname_right"
-            android:text="uuu" />
+            android:text="" />
 
         <ImageView
             android:id="@+id/iv_neekname_right"
@@ -288,7 +288,7 @@
             android:layout_toRightOf="@+id/sign_title"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="个人签名"
+            android:text=""
             android:textColor="@color/color_green" />
 
         <ImageView
